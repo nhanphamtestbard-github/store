@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<nav id="sidebarMenu"
+	class="col-md-3 col-lg-3 d-md-block sidebar collapse">
+	<div class="position-sticky py-4 px-3 sidebar-sticky">
+		<ul class="nav flex-column h-100">
+			<li class="nav-item"><a
+				th:class="${page}=='index'? 'nav-link active': 'nav-link'"
+				aria-current="page" href="/"> <i class="bi-house-fill me-2"></i>
+					Overview
+			</a></li>
+
+
+			<li class="nav-item"><a
+				th:class="${page}=='profile'? 'nav-link active': 'nav-link'"
+				href="/profile"> <i class="bi-person me-2"></i> My Profile
+			</a></li>
+			
+			<li class="nav-item"><a
+				th:class="${page}=='list'? 'nav-link active': 'nav-link'"
+				class="nav-link" aria-current="page" href="list"> <i
+					class="bi-wallet me-2"></i> Staff List 
+			</a></li>
+			
+			<li class="nav-item"><a
+				th:class="${page}=='list-customer'? 'nav-link active': 'nav-link'"
+				class="nav-link" aria-current="page" href="list"> <i
+					class="bi-wallet me-2"></i> Customer List 
+			</a></li>
+
+			<li class="nav-item"><a
+				th:class="${page}=='setting'? 'nav-link active': 'nav-link'"
+				href="/setting"> <i class="bi-gear me-2"></i> Settings
+			</a></li>
+
+			<li class="nav-item"><a
+				th:class="${page}=='help-center'? 'nav-link active': 'nav-link'"
+				href="/help-center"> <i class="bi-question-circle me-2"></i>
+					Help Center
+			</a></li>
+
+			<li class="nav-item featured-box mt-lg-5 mt-4 mb-4"><img
+				src="assets/images/credit-card.png" class="img-fluid" alt="">
+
+				<a class="btn custom-btn" href="#">Upgrade</a></li>
+
+			<li class="nav-item border-top mt-auto pt-2"><a class="nav-link"
+				href="/logout"> <i class="bi-box-arrow-left me-2"></i> Logout
+			</a></li>
+		</ul>
+	</div>
+</nav>
+
+</html>

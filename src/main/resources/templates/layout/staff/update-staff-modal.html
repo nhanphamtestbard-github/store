@@ -1,0 +1,143 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div class="modal fade" id="update-staff-modal" data-bs-keyboard="false"
+	tabindex="-1" aria-labelledby="update-staff-modal-label"
+	aria-hidden="true">
+	<!-- <div> -->
+	<div class="modal-dialog modal-lg"  id="modal-update-staff">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="update-staff-modal-label">Update
+					Staff</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="bg-white">
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="profile-tab"
+								data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+								type="button" role="tab" aria-controls="profile-tab-pane"
+								aria-selected="true">Profile</button>
+						</li>
+
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="address-tab" data-bs-toggle="tab"
+								data-bs-target="#address-tab-pane" type="button" role="tab"
+								aria-controls="address-tab-pane" aria-selected="false">Adress</button>
+						</li>
+
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="department-tab" data-bs-toggle="tab"
+								data-bs-target="#department-tab-pane" type="button" role="tab"
+								aria-controls="department-tab-pane" aria-selected="false">Department</button>
+						</li>
+
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="notification-tab"
+								data-bs-toggle="tab" data-bs-target="#notification-tab-pane"
+								type="button" role="tab" aria-controls="notification-tab-pane"
+								aria-selected="false">Notification</button>
+						</li>
+					</ul>
+
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="profile-tab-pane"
+							role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+							<h6 class="mb-4">User Profile</h6>
+
+							<div class="custom-form profile-form">
+								<input class="form-control" type="text" name="full-name"
+									id="full-name" placeholder="Admin"> <input
+									class="form-control" type="date" name="birth-date"
+									id="birth-date" value="2000-02-02"> <select
+									class="form-select" id="gender">
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+									<option value="Female">Other</option>
+								</select> <input class="form-control" type="email" name="email"
+									id="email" placeholder="Johndoe@gmail.com"> <input
+									class="form-control" type="text" name="phone" id="phone"
+									placeholder="0999999999" readonly>
+
+								<div class="input-group mb-1">
+									<img
+										src="assets/images/profile/senior-man-white-sweater-eyeglasses.jpg"
+										class="profile-image img-fluid" alt=""> <input
+										type="file" class="form-control" id="image"
+										accept="image/png, image/jpeg">
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane fade" id="address-tab-pane" role="tabpanel"
+							aria-labelledby="address-tab" tabindex="0">
+							<h6 class="mb-4">Address</h6>
+
+							<div class="custom-form">
+								<select class="form-select" name="province" id="province">
+									<option value="Male">Thừa Thiên Huế</option>
+									<option value="Female">1</option>
+								</select> <select class="form-select" name="district" id="district">
+									<option value="Male">Thành phố Huế</option>
+									<option value="Female">1</option>
+								</select> <select class="form-select" name="ward" id="ward">
+									<option value="Male">Phường Gia Hội</option>
+									<option value="Female">1</option>
+								</select> <input class="form-control" type="text" name="address"
+									id="address" value="15 Trần Hưng Đạo">
+							</div>
+						</div>
+
+						<div class="tab-pane fade" id="department-tab-pane"
+							role="tabpanel" aria-labelledby="department-tab" tabindex="0">
+							<h6 class="mb-4">Department</h6>
+
+							<div class="custom-form">
+
+								<select class="form-select" id="department">
+									<option value="DEV">Development</option>
+									<option value="TDS">Tranning & Development Support</option>
+								</select> <select class="form-select" id="positon">
+									<option value="MD">Managing Director</option>
+									<option value="INTERN">Intership</option>
+								</select>
+
+							</div>
+						</div>
+
+						<div class="tab-pane fade" id="notification-tab-pane"
+							role="tabpanel" aria-labelledby="notification-tab" tabindex="0">
+							<h6 class="mb-4">Notification</h6>
+
+							<form class="custom-form notification-form" action="#"
+								method="post" role="form">
+
+								<div class="form-check form-switch d-flex mb-3 ps-0">
+									<label class="form-check-label" for="flexSwitchCheckCheckedOne">Account
+										activity</label> <input class="form-check-input ms-auto"
+										type="checkbox" name="form-check-input" role="switch"
+										id="flexSwitchCheckCheckedOne" checked>
+								</div>
+
+								<div class="form-check form-switch d-flex mb-3 ps-0">
+									<label class="form-check-label" for="flexSwitchCheckCheckedTwo">Payment
+										updated</label> <input class="form-check-input ms-auto"
+										type="checkbox" name="form-check-input" role="switch"
+										id="flexSwitchCheckCheckedTwo" checked>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Update</button>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+<th:block th:replace="/layout/head :: head-utils" />
+<th:block th:replace="/layout/head :: head-css" />
+</head>
+
+<body>
+
+	<th:block th:replace="/layout/body :: body-header" />
+	<div class="container-fluid">
+		<div class="row">
+
+			<th:block th:replace="/layout/sidebar-menu" />
+
+			<main
+				class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
+				<div class="title-group mb-3">
+					<h1 class="h2 mb-0">Overview</h1>
+
+					<small class="text-muted">Hello Lý Thanh Tùng, welcome
+						back!</small>
+				</div>
+
+				<div class="row my-4">
+					<div class="col-lg-7 col-12">
+
+						<th:block th:replace="/layout/body :: body-custom-block-balance" />
+
+						<div class="custom-block bg-white">
+							<h5 class="mb-4">History</h5>
+
+							<div id="pie-chart"></div>
+						</div>
+
+						<div class="custom-block bg-white">
+							<div id="chart"></div>
+						</div>
+
+						<th:block th:replace="/layout/body :: body-custom-block-exchange" />
+					
+					</div>
+
+					<div class="col-lg-5 col-12">
+						
+						<th:block th:replace="/layout/body :: body-custom-block-profile-front" />
+
+						<th:block th:replace="/layout/body :: body-custom-block-bottom" />
+						
+						<th:block th:replace="/layout/body :: body-custom-block-transations" />
+						
+						<th:block th:replace="/layout/body :: body-send-money" />
+
+					</div>
+				</div>
+
+				<th:block th:replace="/layout/footer :: site-footer" />
+				
+			</main>
+
+		</div>
+	</div>
+</body>
+
+
+<script>
+	
+</script>
+<th:block th:replace="/layout/script :: script-utils" />
+<script type="text/javascript">
+	var options = {
+		series : [ 13, 43, 22 ],
+		chart : {
+			width : 380,
+			type : 'pie',
+		},
+		labels : [ 'Balance', 'Expense', 'Credit Loan', ],
+		responsive : [ {
+			breakpoint : 480,
+			options : {
+				chart : {
+					width : 200
+				},
+				legend : {
+					position : 'bottom'
+				}
+			}
+		} ]
+	};
+
+	var chart = new ApexCharts(document.querySelector("#pie-chart"), options);
+	chart.render();
+</script>
+<script type="text/javascript">
+	var options = {
+		series : [ {
+			name : 'Income',
+			data : [ 44, 55, 57, 56, 61, 58, 63, 60, 66 ]
+		}, {
+			name : 'Expense',
+			data : [ 76, 85, 101, 98, 87, 105, 91, 114, 94 ]
+		}, {
+			name : 'Transfer',
+			data : [ 35, 41, 36, 26, 45, 48, 52, 53, 41 ]
+		} ],
+		chart : {
+			type : 'bar',
+			height : 350
+		},
+		plotOptions : {
+			bar : {
+				horizontal : false,
+				columnWidth : '55%',
+				endingShape : 'rounded'
+			},
+		},
+		dataLabels : {
+			enabled : false
+		},
+		stroke : {
+			show : true,
+			width : 2,
+			colors : [ 'transparent' ]
+		},
+		xaxis : {
+			categories : [ 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+					'Sep', 'Oct' ],
+		},
+		yaxis : {
+			title : {
+				text : '$ (thousands)'
+			}
+		},
+		fill : {
+			opacity : 1
+		},
+		tooltip : {
+			y : {
+				formatter : function(val) {
+					return "$ " + val + " thousands"
+				}
+			}
+		}
+	};
+
+	var chart = new ApexCharts(document.querySelector("#chart"), options);
+	chart.render();
+</script>
+</html>
